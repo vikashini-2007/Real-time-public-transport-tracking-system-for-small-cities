@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Bus</title>
+<style>
+body{
+font-family:Arial;
+background:#f4f4f4;
+}
+.box{
+width:400px;
+background:white;
+padding:30px;
+margin:80px auto;
+border-radius:15px;
+}
+input,button{
+width:100%;
+padding:12px;
+margin:10px 0;
+}
+button{
+background:#2a5298;
+color:white;
+border:none;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<h2>Add Bus</h2>
+
+<form method="POST">
+
+<input type="text" name="bus_number" placeholder="Bus Number" required>
+
+<input type="text" name="driver_name" placeholder="Driver Name" required>
+
+<input type="text" name="route_id" placeholder="Route ID" required>
+
+<button>Add Bus</button>
+
+</form>
+<a href="/dashboard" class="back-btn">
+        ⬅ Back to Dashboard
+    </a>
+</div>
+
+</body>
+</html>

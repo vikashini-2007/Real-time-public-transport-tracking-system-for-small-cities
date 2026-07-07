@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Details</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:linear-gradient(135deg,#1e3c72,#2a5298);
+            text-align:center;
+            padding-top:50px;
+        }
+
+        .box{
+            width:600px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            color:#1e3c72;
+        }
+
+        input{
+            width:250px;
+            padding:12px;
+            margin:10px;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+
+        button{
+            padding:12px 20px;
+            background:#1e3c72;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#2a5298;
+        }
+
+        .result{
+            margin-top:20px;
+            background:#d4edda;
+            padding:20px;
+            border-radius:10px;
+            text-align:left;
+        }
+
+        .back-btn{
+            display:inline-block;
+            margin-top:20px;
+            background:#007bff;
+            color:white;
+            padding:12px 20px;
+            text-decoration:none;
+            border-radius:8px;
+        }
+
+        .back-btn:hover{
+            background:#0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>🚌 Bus Details</h1>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="bus_number"
+            placeholder="Enter Bus Number"
+            required>
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+    {% if bus %}
+
+    <div class="result">
+
+        <h3>Bus Information ✅</h3>
+
+        <p><b>Bus Number:</b> {{ bus[0] }}</p>
+
+        <p><b>Driver Name:</b> {{ bus[1] }}</p>
+
+        <p><b>Source:</b> {{ bus[2] }}</p>
+
+        <p><b>Destination:</b> {{ bus[3] }}</p>
+
+        <p><b>Latitude:</b> {{ bus[4] }}</p>
+
+        <p><b>Longitude:</b> {{ bus[5] }}</p>
+
+    </div>
+
+    {% endif %}
+
+    <a href="/dashboard" class="back-btn">
+        ⬅ Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>

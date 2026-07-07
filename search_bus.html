@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Bus</title>
+    <style>
+        body{
+            font-family:Arial;
+            text-align:center;
+            background:#f2f2f2;
+            padding:50px;
+        }
+
+        .box{
+            width:500px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        input{
+            padding:10px;
+            width:250px;
+        }
+
+        button{
+            padding:10px 20px;
+        }
+
+        .result{
+            margin-top:20px;
+            background:#d4edda;
+            padding:15px;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <h1>🔍 Search Bus</h1>
+
+    <form method="POST">
+        <input type="text"
+               name="bus_number"
+               placeholder="Enter Bus Number"
+               required>
+
+        <button type="submit">Search</button>
+    </form>
+
+    {% if bus %}
+
+    <div class="result">
+        <h3>Bus Found ✅</h3>
+
+        <p><b>Bus Number:</b> {{ bus[0] }}</p>
+        <p><b>Driver Name:</b> {{ bus[1] }}</p>
+        <p><b>Latitude:</b> {{ bus[2] }}</p>
+        <p><b>Longitude:</b> {{ bus[3] }}</p>
+    </div>
+
+    {% endif %}
+
+</div>
+<a href="/dashboard" class="back-btn">
+        ⬅ Back to Dashboard
+</a>
+</body>
+</html>

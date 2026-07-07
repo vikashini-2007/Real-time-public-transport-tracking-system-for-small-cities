@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>View Buses</title>
+</head>
+<body>
+
+<h2>Available Buses</h2>
+
+<table border="1">
+
+<tr>
+<th>Bus Number</th>
+<th>Driver Name</th>
+<th>Latitude</th>
+<th>Longitude</th>
+</tr>
+
+{% for bus in buses %}
+<tr>
+<td>{{ bus[0] }}</td>
+<td>{{ bus[1] }}</td>
+<td>{{ bus[2] }}</td>
+<td>{{ bus[3] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+<a href="/dashboard" class="back-btn">
+        ⬅ Back to Dashboard
+</a>
+</body>
+</html>
